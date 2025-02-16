@@ -5,6 +5,9 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh ;
 }
 
 header {
@@ -12,12 +15,26 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000 ;
 }
 
 header h1 {
     margin: 0;
 }
 
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+/*
 section {
     margin: 20px;
     padding: 20px;
@@ -28,7 +45,7 @@ section {
 
 section h2 {
     color: #333;
-}
+} */
 
 ul {
     list-style-type: none;
@@ -42,12 +59,116 @@ ul li {
     border-radius: 5px;
 }
 
+
 footer {
     text-align: center;
     padding: 10px 0;
     background: #333;
     color: #fff;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
+}
+/*Animation bouton*/
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* effet de zoom au survol */
+}
+
+/*Animation pour la card*/
+.card{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    width: 300px;
+    text-align: center ;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #007BFF;
+} 
+.card h2 {
+    font-size: 1.25em;
+    margin-bottom: 10px 0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card p {
+    margin-bottom: 10px;
+    font-size: 0.90em;
+    color: #555;
+    display: flex;
+    
+   
+}
+
+.card button {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+
+.card:hover {
+    transform: translateY(-5px); /* effet d'élevation survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/*Animation au clic sur le btn voir les tâches*/
+.card.clicked {
+    animation: cardClickAnimation 0.5s ease;
+}
+
+@keyframes cardClickAnimation {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 };
 }
