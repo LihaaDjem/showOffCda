@@ -71,6 +71,9 @@ main {
     padding: 20px;
     max-height: calc(100vh - 160px);
     overflow-y: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    
 }
 
 
@@ -205,4 +208,125 @@ footer p {
     100% {
         transform: scale(1);
         box-shadow: 0 };
+}
+
+/* Media Queries pour les écrans de petite taille (mobile) */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .sprint-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .card h2 {
+        font-size: 1.2em;
+        min-height: 50px;
+    }
+
+    .card p {
+        font-size: 0.9em;
+        min-height: 70px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* Media Queries pour les écrans de taille moyenne (tablettes) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .card {
+        width: calc(50% - 20px);
+    }
+
+    .card h2 {
+        font-size: 1.3em;
+        min-height: 55px;
+    }
+
+    .card p {
+        font-size: 1em;
+        min-height: 75px;
+    }
+
+    .sprint-nav {
+        gap: 8px;
+    }
+
+    .nav-link {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+}
+
+/* Media Queries pour les écrans de grande taille (desktop) */
+@media (min-width: 1025px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .card {
+        width: calc(33.33% - 20px);
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+        min-height: 60px;
+    }
+
+    .card p {
+        font-size: 1.1em;
+        min-height: 80px;
+    }
+
+    .sprint-nav {
+        gap: 10px;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+}
+ 
+
+/* Centrer le contenu sur les écrans larges */
+@media (min-width: 1200px) {
+    main {
+        padding: 20px 0;
+    }
 }
